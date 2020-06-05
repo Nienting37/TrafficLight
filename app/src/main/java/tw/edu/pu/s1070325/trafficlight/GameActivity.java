@@ -10,7 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class GameActivity extends AppCompatActivity {
-
     GameSurfaceView GameSV;
     Handler handler;
 
@@ -33,10 +32,12 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         GameSV = (GameSurfaceView) findViewById(R.id.GameSV);
+
         //設定初始測試之燈號秒數
         GameSV.SetLightSec(6,2,3);
 
         handler= new Handler();
+
     }
 
     //利用手指觸控，控制小男孩走路
@@ -60,6 +61,8 @@ public class GameActivity extends AppCompatActivity {
             GameSV.drawSomething(canvas);
             GameSV.getHolder().unlockCanvasAndPost(canvas);
             handler.postDelayed(runnable, 50);
-        }
+            }
     };
+
 }
+

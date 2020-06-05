@@ -11,6 +11,9 @@ import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+
+import static android.graphics.Color.GREEN;
+
 public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     SurfaceHolder surfaceHolder;
     Bitmap Road, Boy;
@@ -128,7 +131,7 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
         paint.setStrokeWidth(5.0f);
 
         //紅綠燈三個圓
-        paint.setColor(Color.GREEN);
+        paint.setColor(GREEN);
         canvas.drawCircle(canvas.getWidth() - r -8, 5*r+20, r, paint);
         paint.setColor(Color.YELLOW);
         canvas.drawCircle(canvas.getWidth() - r -8, 3*r+10, r, paint);
@@ -138,20 +141,22 @@ public class GameSurfaceView extends SurfaceView implements SurfaceHolder.Callba
         //以綠燈為例，畫出實心圓
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setColor(Color.GREEN);
-        canvas.drawCircle(canvas.getWidth() - r -8, 5*r+20, r, paint);
+        canvas.drawCircle(canvas.getWidth() - r - 8, 5 * r + 20, r, paint);
 
         //顯示各燈號秒數
         paint.setColor(Color.BLUE);
         paint.setTextSize(r);
-        canvas.drawText(String.valueOf(GreenLightSec), canvas.getWidth() - 1.5f *r, 5.5f * r + 10 , paint);
-        canvas.drawText(String.valueOf(YellowLightSec), canvas.getWidth() - 1.5f *r, 3.5f * r + 5 , paint);
-        canvas.drawText(String.valueOf(RedLightSec), canvas.getWidth() - 1.5f *r, 1.5f * r  , paint);
+            canvas.drawText(String.valueOf(GreenLightSec), canvas.getWidth() - 1.5f * r, 5.5f * r + 10, paint);
+            canvas.drawText(String.valueOf(YellowLightSec), canvas.getWidth() - 1.5f * r, 3.5f * r + 5, paint);
+            canvas.drawText(String.valueOf(RedLightSec), canvas.getWidth() - 1.5f * r, 1.5f * r, paint);
     }
 
     //初始設定各燈號秒數
-    public void SetLightSec(int GreenSec, int YellowSec, int RedSec){
+    public void SetLightSec(int GreenSec, int YellowSec, int RedSec) {
         GreenLightSec = GreenSec;
         YellowLightSec = YellowSec;
         RedLightSec = RedSec;
+
     }
+
 }
